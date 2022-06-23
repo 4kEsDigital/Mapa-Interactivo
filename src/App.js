@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Map from "./Map.js";
+import Modal from "./components/modals/Modal";
 import logo from "./assets/logo_skyview.svg";
 import img1 from "./assets/1.png";
 import img2 from "./assets/2.png";
@@ -12,6 +13,14 @@ import agenda from "./assets/agenda.png";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOrder, setModalOrder] = useState(0);
+
+  const handleModalOpen = (order) => {
+    setModalOrder(order);
+    setModalOpen(true);
+  }
+
   return (
     <div className="font-mont text-general">
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -61,7 +70,7 @@ export default function App() {
           </h1>
           <div className="-z-10 absolute mt-10 md:mt-8 lg:mt-7 xl:mt-11 2xl:mt-14 w-full h-10 left-0 bg-title opacity-20"></div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 text-center gap-10 pr-20 pl-2 mb-16 text-title">
-            <div>
+            <div onClick={()=>handleModalOpen(2)}>
               <div className="flex justify-between items-center space-x-5 relative">
                 <div className="tracking-[.25em] opacity-0">..</div>
                 <img className="rounded-2xl" src={img1} alt="Historia" />
@@ -71,7 +80,7 @@ export default function App() {
                 Historia
               </h1>
             </div>
-            <div>
+            <div onClick={()=>handleModalOpen(1)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img className="rounded-2xl" src={img2} alt="Oficina Central" />
@@ -81,7 +90,7 @@ export default function App() {
                 Oficina Central
               </h1>
             </div>
-            <div>
+            <div onClick={()=>handleModalOpen(0)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img
@@ -95,7 +104,7 @@ export default function App() {
                 Nuestros Planteles
               </h1>
             </div>
-            <div>
+            <div onClick={()=>handleModalOpen(5)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img
@@ -109,7 +118,7 @@ export default function App() {
                 Plantas Industriales
               </h1>
             </div>
-            <div>
+            <div onClick={()=>handleModalOpen(4)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img
@@ -123,7 +132,7 @@ export default function App() {
                 Producción Responsable
               </h1>
             </div>
-            <div>
+            <div onClick={()=>handleModalOpen(3)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img className="rounded-2xl" src={img6} alt="Comunidades" />
@@ -183,6 +192,9 @@ export default function App() {
         <br></br>
         <br></br>
       </div>
+      {
+        modalOpen && ( <Modal order={modalOrder} close={()=>setModalOpen(false)} /> )
+      }
     </div>
   );
 }
