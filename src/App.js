@@ -70,7 +70,7 @@ export default function App() {
           </h1>
           <div className="-z-10 absolute mt-10 md:mt-8 lg:mt-7 xl:mt-11 2xl:mt-14 w-full h-10 left-0 bg-title opacity-20"></div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 text-center gap-10 pr-20 pl-2 mb-16 text-title">
-            <div onClick={()=>handleModalOpen(2)}>
+            <div className="pointer-hand" onClick={()=>handleModalOpen(2)}>
               <div className="flex justify-between items-center space-x-5 relative">
                 <div className="tracking-[.25em] opacity-0">..</div>
                 <img className="rounded-2xl" src={img1} alt="Historia" />
@@ -80,7 +80,7 @@ export default function App() {
                 Historia
               </h1>
             </div>
-            <div onClick={()=>handleModalOpen(1)}>
+            <div className="pointer-hand" onClick={()=>handleModalOpen(1)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img className="rounded-2xl" src={img2} alt="Oficina Central" />
@@ -90,7 +90,7 @@ export default function App() {
                 Oficina Central
               </h1>
             </div>
-            <div onClick={()=>handleModalOpen(0)}>
+            <div className="pointer-hand" onClick={()=>handleModalOpen(0)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img
@@ -104,7 +104,7 @@ export default function App() {
                 Nuestros Planteles
               </h1>
             </div>
-            <div onClick={()=>handleModalOpen(5)}>
+            <div className="pointer-hand" onClick={()=>handleModalOpen(5)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img
@@ -118,7 +118,7 @@ export default function App() {
                 Plantas Industriales
               </h1>
             </div>
-            <div onClick={()=>handleModalOpen(4)}>
+            <div className="pointer-hand" onClick={()=>handleModalOpen(4)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img
@@ -132,7 +132,7 @@ export default function App() {
                 Producción Responsable
               </h1>
             </div>
-            <div onClick={()=>handleModalOpen(3)}>
+            <div className="pointer-hand" onClick={()=>handleModalOpen(3)}>
               <div className="flex justify-between items-center space-x-5">
                 <font className="tracking-[.25em]">..</font>
                 <img className="rounded-2xl" src={img6} alt="Comunidades" />
