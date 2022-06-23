@@ -1,6 +1,7 @@
 # Plataforma Mapa interactivo y agendamiento Virtual
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto esta desarrollado con [Create React App](https://github.com/facebook/create-react-app).
+El agendamiento e integracion sta desarrollado con Calendly
 
 ## Available Scripts
 
